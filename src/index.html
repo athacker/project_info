@@ -30,16 +30,16 @@
 
 
 
-    <div ng-controller='mainController' class="navbar navbar-default">
+    <div ng-controller='mainController as mc' class="navbar navbar-default" ng-init="mc.init">
         <div class="container-fluid">
             <div class="navbar-header">
 
-                <p class="navbar-text">Project Information</p>
+                <p class="navbar-text">{{mc.title}}</p>
 
                 <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary" ng-model="devNavigation" uib-btn-radio="'guidelines'">Group Guidelines</label>
-                    <label class="btn btn-primary" ng-model="devNavigation" uib-btn-radio="'architecture'">Arhitecture</label>
-                    <label class="btn btn-primary" ng-model="devNavigation" uib-btn-radio="'standards'">Group Standards</label>
+                    <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'guidelines'">Group Guidelines</label>
+                    <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'architecture'">Arhitecture</label>
+                    <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'standards'">Group Standards</label>
                 </div>
             </div>
         </div>
