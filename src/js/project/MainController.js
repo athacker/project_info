@@ -5,11 +5,26 @@
 
     angular.module('app').controller('mainController', function($scope, $location){
 
-        $scope.title='Project Information';
-        $scope.devNavigation='guidelines';
+        var mc = this;
+        //class variables
+        mc.title='';
+        mc.devNavigation='';
 
-        $scope.$watch('devNavigation',function(val){
-              $location.url('/' + $scope.devNavigation +'/'   );
+        //method interface
+        mc.init = init();
+
+
+        //method implmentations
+        function init(){
+            console.log("Initialize Main Controller as mc.");
+            mc.title='Project Information';
+            mc.devNavigation='guidelines';
+        }
+
+
+        $scope.$watch('mc.devNavigation',function(val){
+            console.log("Navigate to: " + val);
+            $location.url('/' + val +'/'   );
         });
 
 
