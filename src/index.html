@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="">
+<div ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Dev Guide</title>
+        <meta name="description" content="Angular-Html5 work">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+
+        <script src="js/project/app.js"></script>
+        <script src="js/project/standards/StandardsController.js"></script>
+        <script src="js/project/MainController.js"></script>
+
+
+
+
+    <div ng-controller='mainController'>
+
+        <div class="panel-heading"><h4>{{title}}</h4></div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary" ng-model="devNavigation" uib-btn-radio="'guidelines'">Group Guidelines</label>
+            <label class="btn btn-primary" ng-model="devNavigation" uib-btn-radio="'architecture'">Arhitecture</label>
+            <label class="btn btn-primary" ng-model="devNavigation" uib-btn-radio="'standards'">Group Standards</label>
+        </div>
+    </div>
+
+
+    <data-ng-view></data-ng-view>
+
+
+
+
+
+    </body>
+
+</div>
+
+</html>

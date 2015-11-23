@@ -1,0 +1,12 @@
+archive
+node_modules
+.idea
+bower_components
+build
+dist
+.editorconfig
+.jscsrc
+.jshintrc
+.travis.yml
+
+
