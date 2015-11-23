@@ -10,13 +10,20 @@ module.exports = function(grunt) {
         jshint: {
             all: ['Gruntfile.js', 'src/js/project/**/*.js', 'test/**/*.js']
         },
+
         comments:{
             build:{
                 options: {
                     singleline: true,
-                    multiline: true
+                        multiline: true
                 },
-                src: [   'dist/js/project/**/*.js']
+                src: [   'dist/clean/**/*.js']
+            }
+    },
+        removelogging:{
+            build:{
+                src:'src/js/project/**.js',
+                dest:'dist/clean/project/app.js'
             }
         },
         copy:{
@@ -42,23 +49,24 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'build/app.min.js': ['src/js/project/**.js']
+                    'build/app.min.js': ['dist/clean/projects/*.js']
                 }
             }
         }
     });
 
-    // Load the plugins
+    // via Node -- Load the plugins
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-stripcomments');
+    grunt.loadNpmTasks("grunt-remove-logging");
 
 
 
     // Default task(s).
-    grunt.registerTask('default','minify, copy-for-dev-debug', ['jshint','uglify','copy:build_dev', 'comments']);
-    grunt.registerTask('prod-build','minify for production', ['copy:build_prod', 'comments', 'jshint','uglify' ]);
+    grunt.registerTask('default','minify, copy-for-dev-debug', ['jshint','uglify','copy:build_dev' ]);
+    grunt.registerTask('prod-build','', ['removelogging', 'comments', 'jshint','uglify','copy:build_prod', ]);
 
 
 };
