@@ -10,7 +10,15 @@ module.exports = function(grunt) {
         jshint: {
             all: ['Gruntfile.js', 'src/js/project/**/*.js', 'test/**/*.js']
         },
-
+        comments:{
+            build:{
+                options: {
+                    singleline: true,
+                    multiline: true
+                },
+                src: [   'dist/js/project/**/*.js']
+            }
+        },
         copy:{
             build_dev:{
                    cwd:'src',
@@ -22,7 +30,7 @@ module.exports = function(grunt) {
             build_prod:{
                 cwd:'src',
                 src:['index.html', 'html/*.html'],
-                dest:'build',
+                dest:'dist',
                 expand: true
 
             }
@@ -44,12 +52,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-stripcomments');
 
 
 
     // Default task(s).
-    grunt.registerTask('default','minify, copy-for-dev-debug', ['jshint','uglify','copy:build_dev']);
-    grunt.registerTask('prod-build','minify for production', ['jshint','uglify', 'copy:build_prod']);
+    grunt.registerTask('default','minify, copy-for-dev-debug', ['jshint','uglify','copy:build_dev', 'comments']);
+    grunt.registerTask('prod-build','minify for production', ['copy:build_prod', 'comments', 'jshint','uglify' ]);
 
 
 };
