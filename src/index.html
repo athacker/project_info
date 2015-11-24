@@ -12,11 +12,10 @@
         <!-- Place favicon.ico in the root directory -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
@@ -28,25 +27,30 @@
         <script src="js/project/guidelines/GuidelinesController.js"></script>
         <script src="js/project/standards/StandardsController.js"></script>
         <script src="js/project/MainController.js"></script>
+    </head>
 
-
-
+    <body>
 
     <div ng-controller='mainController as mc' class="navbar navbar-default" ng-init="mc.init">
-        <div class="container-fluid">
-            <div class="navbar-header">
 
-                <div class="page-header">
-                    <h1>Dev Ops <small>  Project Documentation Framework</small></h1>
-                </div>
 
-                <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'guidelines'">Group Guidelines</label>
-                    <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'architecture'">Arhitecture</label>
-                    <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'standards'">Group Standards</label>
+            <div class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Dev Ops <small> Project Info</small> </a>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'operations'">Dev Operations</label>
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'guidelines'">Guidelines</label>
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'architecture'">Arhitecture</label>
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'standards'">Standards</label>
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'setup'">Set Up</label>
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'technical'">Technical Help</label>
+                            <label class="btn btn-primary" ng-model="mc.devNavigation" uib-btn-radio="'team'">Team Members</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
 
     </div>
 
