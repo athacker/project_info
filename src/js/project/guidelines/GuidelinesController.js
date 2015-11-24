@@ -12,7 +12,7 @@
         function init(){
           console.log("Initialize Guidelines Controller as gc");
           gc.title = 'Guidelines Controller';
-        };
+        }
 
 
 
