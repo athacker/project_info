@@ -8,8 +8,8 @@ angular.module('app').directive('navigation', function(){
         restrict: 'E',
         trasclude: true,
         scope:{},
-        templateUrl: '/html/partials/navigation.html',
-
+        //templateUrl: '/html/partials/navigation.html',
+        templateUrl: '/html/partials/responsive_navigation.html',
         controller:  'mainController',
         controllerAs: 'mc'
 
