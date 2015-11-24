@@ -6,14 +6,26 @@
 
    app.config(['$routeProvider',function($routeProvider){
 
-       $routeProvider.when('/guidelines',{
+       $routeProvider.when('/operations',{
+           templateUrl: 'html/operations.html'
+       }).when('/guidelines',{
            templateUrl: 'html/guidelines.html'
-       }).when('/standards',{
-           templateUrl: 'html/standards.html'
        }).when('/architecture',{
            templateUrl: 'html/architecture.html'
+       }).when('/standards',{
+           templateUrl: 'html/standards.html'
+       }).when('/setup',{
+           templateUrl: 'html/setup.html'
+       }).when('/help',{
+           templateUrl: 'html/help.html'
+       }).when('/team',{
+           templateUrl: 'html/team.html'
+       }).when('/schedule',{
+           templateUrl: 'html/schedule.html'
+       }).when('/codepen',{
+           templateUrl: 'html/codepen.html'
        }).otherwise({
-            redirectTo:  'html/guidelines.html'
+            redirectTo:  'html/operations.html'
        });
 
 
