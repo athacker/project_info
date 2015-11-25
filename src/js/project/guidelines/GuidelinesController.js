@@ -24,7 +24,7 @@
          */
         function init(){
           console.log("Initialize Guidelines Controller as gc");
-          gc.title = 'Project Guidelines';
+          gc.title = 'Guidelines';
           setUpTestData();
          }
 
