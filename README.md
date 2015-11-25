@@ -1,3 +1,6 @@
 ## Project Information/Documentation/Guidelines and Architecture
 
-The code is available under the [MIT license](LICENSE.txt).
+1. Use Webstorm to run front end code using Tomcat as a We Server
+2. Install Node and Grunt to build/minimize front end code for deployment into production.
+3. GIT is used as the repository
+4. 
