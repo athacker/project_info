@@ -1,0 +1,39 @@
+
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+                <h3> {{title}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+                <div ng-repeat="g in data track by $index">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <label ng-click=" isCollapsed = !isCollapsed">
+                                    {{g.title}}
+                                </label>
+                            </h4>
+                        </div>
+                        <div collapse="!isCollapsed">
+                            <div class="panel-body">{{g.value}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+

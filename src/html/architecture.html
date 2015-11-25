@@ -1,48 +1,5 @@
 <div ng-controller="architectureController as ac" ng-init="ac.init">
-
-
-    <div class="container-fluid">
-        <div class="row ">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-                <h3> {{ac.title}}</h3>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="container-fluid">
-        <div class="row">
-
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
-                <div ng-repeat="g in ac.components track by $index">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <label ng-click=" isCollapsed = !isCollapsed">
-                                    {{g.title}}
-                                </label>
-                            </h4>
-                        </div>
-                        <div collapse="!isCollapsed">
-                            <div class="panel-body">{{g.value}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
+    <grid data="ac.components" title="ac.title"></grid>
 </div>
 
 
