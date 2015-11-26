@@ -1,7 +1,7 @@
 
-   var app =  angular.module('app',['ngRoute','ui.bootstrap' ]);
+   var app =  angular.module('app',['ngRoute','ngResource','ui.bootstrap'  ]);
 
-   app.config(['$routeProvider',function($routeProvider){
+   app.config(['$routeProvider',function($routeProvider  ){
 
        $routeProvider.when('/operations',{
            templateUrl: 'html/operations.html'
