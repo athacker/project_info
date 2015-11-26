@@ -33,8 +33,16 @@
          * TODO: replace these with service data restful calls to back end database.
          */
         function setUpTestData(){
-          gc.guidelines = GuidelinesService.query ;
-          console.log("gc.guidelines " + JSON.stringify(GuidelinesService.query));
+            GuidelinesService.query(function(data){
+
+                 console.log("gc.guidelines " + JSON.stringify(data ) );
+                 gc.guidelines=data;
+
+            }) ;
+
+
+
+
 
         }
 

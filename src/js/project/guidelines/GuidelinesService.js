@@ -3,7 +3,7 @@
  */
 app.factory('GuidelinesService',['$resource',   function($resource  ){
 
-    return{
-        query:$resource('/data/guidelines.json')
-    };
+    return $resource('/api/guidelines.json', {}, {
+        query: { method: 'GET',isArray: true }
+    });
 }]);
