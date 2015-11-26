@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module('app').controller('standardsController', function($scope){
+    app.controller('standardsController', function($scope){
 
    var sc = this;
    sc.title = 'Standards and Conventions';
