@@ -1,7 +1,7 @@
  /**
  * Created by AndreaThacker on 11/24/2015.
  */
-angular.module('app').directive('grid', function(){
+app.directive('grid', function(){
     return{
         restrict: 'E',
         scope:{
