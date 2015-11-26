@@ -3,7 +3,7 @@
  */
 (function(){
 
-    angular.module('app').controller('architectureController', function($scope ) {
+    app.controller('architectureController', function($scope ) {
 
         var ac = this;
         ac.title='';
