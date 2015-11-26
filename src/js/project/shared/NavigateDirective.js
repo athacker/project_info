@@ -1,7 +1,7 @@
 /**
  * Created by AndreaThacker on 11/24/2015.
  */
-angular.module('app').directive('navigation', function(){
+app.directive('navigation', function(){
 
     return{
 
