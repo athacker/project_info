@@ -3,7 +3,7 @@
  */
 (function(){
 
-    angular.module('app').controller('mainController', function($scope, $location){
+    app.controller('mainController', function($scope, $location){
 
         var mc = this;
         //class variables
