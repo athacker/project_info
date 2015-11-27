@@ -22,10 +22,15 @@
                                 </label>
                             </h4>
                         </div>
-                        <div uib-collaps="!isCollapsed">
-                            <div class="panel-body">{{g.value}}
+                        <div class="panel-collapse collapse" uib-collapse="!isCollapsed">
+                            <div class="panel-body">
+                                {{g.value}}
+                                <span class="pull-right">edit</span><br/>
+                                <span class="pull-right">remove</span>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
 
