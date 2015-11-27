@@ -4,6 +4,10 @@
 app.factory('GuidelinesService',['$resource',   function($resource  ){
 
     return $resource('/api/guidelines.json', {}, {
-        query: { method: 'GET',isArray: true }
+        query: { method: 'GET',isArray: true },
+        post: {
+            method: 'POST',
+            url: '/api/success.json'
+        }
     });
 }]);

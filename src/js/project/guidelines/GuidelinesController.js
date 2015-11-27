@@ -9,13 +9,13 @@
          */
         var gc = this;
         gc.title = '';
-
         gc.guidelines=[];
 
         /**
          * Method Interface
          */
         gc.init = init();
+        gc.saveGuideline=saveGuideline();
 
 
 
@@ -25,27 +25,24 @@
         function init(){
           console.log("Initialize Guidelines Controller as gc Service " + GuidelinesService);
           gc.title = 'Guidelines';
-          setUpTestData();
+          setUpData();
          }
+
+        function saveGuideline(){
+            GuidelinesService.post({"title":"1","value":"2"},function(data){
+                console.log("Save Guidelines Return Response:" + JSON.stringify(data ) );
+            });
+        }
 
 
         /**
-         * TODO: replace these with service data restful calls to back end database.
+         * Private Methods below
          */
-        function setUpTestData(){
+        function setUpData(){
             GuidelinesService.query(function(data){
-
-                 console.log("gc.guidelines " + JSON.stringify(data ) );
                  gc.guidelines=data;
-
             }) ;
-
-
-
-
-
         }
-
 
 
 
