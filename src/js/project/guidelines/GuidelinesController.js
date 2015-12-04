@@ -15,9 +15,11 @@
          * Method Interface
          */
         gc.init = init();
-        gc.saveGuideline=saveGuideline();
 
 
+        $scope.save=function(){
+            alert("Save Me from scope!!");
+        }
 
         /**
          * Method implementation
@@ -28,10 +30,15 @@
           setUpData();
          }
 
-        function saveGuideline(){
-            GuidelinesService.post({"title":"1","value":"2"},function(data){
-                console.log("Save Guidelines Return Response:" + JSON.stringify(data ) );
-            });
+        /**
+         * needs to be on the scope for directive access.
+         * @param guideline
+         */
+        $scope.saveGuideline = function(guideline){
+            alert('save guideline');
+            //GuidelinesService.post({"title":"1","value":"2"},function(data){
+            //    console.log("Save Guidelines Return Response:" + JSON.stringify(data ) );
+            //});
         }
 
 

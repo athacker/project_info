@@ -23,13 +23,19 @@
                             </h4>
                         </div>
                         <div class="panel-collapse collapse" uib-collapse="!isCollapsed">
-                            <div class="panel-body">
+                            <div class="panel-body" ng-show="!isEdit">
                                 {{g.value}}
-                                <span class="pull-right">edit</span><br/>
-                                <span class="pull-right">remove</span>
+
+                                <div class="pull-right">
+                                    <span class="glyphicon glyphicon-edit  " ng-click="isEdit=true"> </span> &nbsp;
+                                    <span class=" glyphicon glyphicon-remove-circle "> </span>
+                                </div>
                             </div>
 
-                        </div>
+                            <div class="panel-body"ng-show="isEdit">
+                                <textarea cols="75" >{{g.value}}</textarea>
+                                <span class="pull-right glyphicon glyphicon-save" ng-click="save()"> </span><br/>
+                            </div>
 
                     </div>
                 </div>

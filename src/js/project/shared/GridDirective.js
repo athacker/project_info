@@ -4,10 +4,20 @@
 app.directive('grid', function(){
     return{
         restrict: 'E',
+
         scope:{
-            data: '=', title: '='
+            accept: '&', data: '=', title: '='
         },
-        templateUrl: '/html/partials/grid.html'
+        templateUrl: '/html/partials/grid.html',
+        controller: function($scope  ){
+            $scope.isEdit=false;
+
+            $scope.save= function(){
+                 $scope.accept();
+            }
+
+        }
+
     };//return
 
 
