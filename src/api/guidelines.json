@@ -1,4 +1,4 @@
-[{"title":"Dev Process", "value":"Agile"},
-{"title":"Quality", "value":"Unit Test"},
+[{"title":"Software Deve Process", "value":"Agile Methodology"},
+{"title":"Quality", "value":"Unit Test using JUnit, Mockito, Protractor"},
 {"title":"Code Reviews", "value": "Once per Iteration."}]
 
