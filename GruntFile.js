@@ -15,11 +15,11 @@ module.exports = function(grunt) {
             build:{
                 options: {
                     singleline: true,
-                        multiline: true
+                    multiline: true
                 },
                 src: [   'dist/clean/**/*.js']
             }
-    },
+        },
         removelogging:{
             build:{
                 src:'src/js/project/**.js',
@@ -28,12 +28,12 @@ module.exports = function(grunt) {
         },
         copy:{
             build_dev:{
-                   cwd:'src',
-                   src:['**'],
-                   dest:'dist',
-                   expand: true
+                cwd:'src',
+                src:['**'],
+                dest:'dist',
+                expand: true
 
-             },
+            },
             build_prod:{
                 cwd:'src',
                 src:['index.html', 'html/*.html'],
