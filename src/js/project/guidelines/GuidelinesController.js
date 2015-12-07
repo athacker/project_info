@@ -9,17 +9,13 @@
          */
         var gc = this;
         gc.title = '';
-        gc.guidelines=[];
+        $scope.guidelines=[];
 
         /**
          * Method Interface
          */
         gc.init = init();
 
-
-        $scope.save=function(){
-            alert("Save Me from scope!!");
-        }
 
         /**
          * Method implementation
@@ -31,26 +27,37 @@
          }
 
         /**
-         * needs to be on the scope for directive access.
-         * @param guideline
-         */
-        $scope.saveGuideline = function(guideline){
-            alert('save guideline');
-            //GuidelinesService.post({"title":"1","value":"2"},function(data){
-            //    console.log("Save Guidelines Return Response:" + JSON.stringify(data ) );
-            //});
-        }
-
-
-        /**
          * Private Methods below
          */
         function setUpData(){
             GuidelinesService.query(function(data){
-                 gc.guidelines=data;
+                $scope.guidelines=data;
             }) ;
         }
 
+
+        /**
+         * set up APIS
+         * needs to be on the scope for directive access.
+         * @param guideline
+         */
+        $scope.saveGuideline = function(guideline){
+            //GuidelinesService.post({"title":"1","value":"2"},function(data){
+            //    console.log("Save Guidelines Return Response:" + JSON.stringify(data ) );
+            //});
+             $scope.guidelines.filter(function( item){
+                if (item.id === guideline.id){
+                    $scope.guidelines[item] = guideline;
+                }
+            });
+        };
+
+             
+        $scope.deleteGuideline = function(guideline ){
+             $scope.guidelines =  $scope.guidelines.filter(function( item){
+                return item.id !== guideline.id;
+            });
+        };
 
 
     });
