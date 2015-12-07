@@ -6,14 +6,17 @@ app.directive('grid', function(){
         restrict: 'E',
 
         scope:{
-            accept: '&', data: '=', title: '='
+            remove: '&', accept: '&',  data: '=', title: '='
         },
         templateUrl: '/html/partials/grid.html',
         controller: function($scope  ){
             $scope.isEdit=false;
+            $scope.save= function(saveItem){
+                $scope.accept({item: saveItem});
+            },
 
-            $scope.save= function(){
-                 $scope.accept();
+            $scope.delete = function(removeItem ){
+                $scope.remove( {item: removeItem});
             }
 
         }
