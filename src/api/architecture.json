@@ -1,0 +1,11 @@
+[{"id":1, "sort":1, "title":"Angular", "value":"use angular for front end javascript"},
+{"id":2, "sort":2, "title":"Node", "value":"use to install project compnents"},
+{"id":3, "sort":3, "title":"Bower", "value": "use to manage javascript includes.."},
+{"id":4, "sort":4, "title":"Grunt", "value": "use at front end build tool, might migrate to gradle at a later date."},
+{"id":5, "sort":5, "title":"Tomcat", "value": "Use Tomcat local -- deploy to AWS"},
+{"id":6, "sort":6, "title":"Grunt", "value": "use at front end build tool, might migrate to gradle at a later date."},
+{"id":7, "sort":7, "title":"JsHint", "value": "Javascript Code Cleanu."},
+{"id":8, "sort":8, "title":"Database", "value": "Yet to be determined'."},
+{"id":9, "sort":9, "title":"Accessibility", "value": "ng-aria"},
+{"id":10, "sort":10, "title":"Mobile", "value": "use Responsive Code Techniques and test before checkins."},
+{"id":11, "sort":11, "title":"Bootstrap UI", "value": "avoid using jquery -- stick with jquery lite"}]
