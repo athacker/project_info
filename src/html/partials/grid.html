@@ -13,29 +13,29 @@
 
             <div class="col-md-1"></div>
             <div class="col-md-8">
-                <div ng-repeat="g in data track by $index">
+                <div ng-repeat="item in data track by $index">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <label ng-click=" isCollapsed = !isCollapsed">
-                                    {{g.title}}
+                                    {{item.title}}
                                 </label>
                             </h4>
                         </div>
                         <div class="panel-collapse collapse" uib-collapse="!isCollapsed">
                             <div class="panel-body" ng-show="!isEdit">
-                                {{g.value}}
+                                {{item.value}}
 
                                 <div class="pull-right">
-                                    <span class="glyphicon glyphicon-edit  " ng-click="isEdit=true"> </span> &nbsp;
-                                    <span class=" glyphicon glyphicon-remove-circle "> </span>
+                                    <span class="glyphicon glyphicon-edit" ng-click="isEdit=true"> </span> &nbsp;
+                                    <span class=" glyphicon glyphicon-remove-circle"  ng-click="delete(item)"> </span>
                                 </div>
                             </div>
 
                             <div class="panel-body"ng-show="isEdit">
-                                <textarea cols="75" >{{g.value}}</textarea>
-                                <span class="pull-right glyphicon glyphicon-save" ng-click="save()"> </span><br/>
-                            </div>
+                                <textarea cols="75" ng-model="item.value">{{item.value}}</textarea>
+                                <span class="pull-right glyphicon glyphicon-save" ng-click="save(item); isEdit=false"> </span><br/>
+                        </div>
 
                     </div>
                 </div>
