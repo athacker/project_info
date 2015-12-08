@@ -83,8 +83,18 @@
                             </div>
 
                             <div class="panel-body"ng-show="isEdit">
-                                <textarea cols="75" ng-model="item.value">{{item.value}}</textarea>
-                                <span class="pull-right glyphicon glyphicon-save" ng-click="save(item); isEdit=false"> </span><br/>
+
+                                <div class="input-group"  >
+                                    <label class="control-label">Value</label>
+                                    <input type="text"  class="form-control" ng-model="g.value"  />
+                                </div>
+
+
+
+                                <button class="btn btn-primary " ng-click="save(item)"> Save</button>
+                                <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+                                <button class="btn btn-link" ng-click="reset()">Reset</button>
+
                         </div>
 
                     </div>
