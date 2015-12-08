@@ -1,5 +1,5 @@
 
-   var app =  angular.module('app',['ngRoute','ngResource','ui.bootstrap'  ]);
+   var app =  angular.module('app',['ngRoute','ngResource','ui.bootstrap','ui.bootstrap.showErrors'  ]);
 
    app.config(['$routeProvider',function($routeProvider  ){
 
@@ -28,7 +28,9 @@
 
    }]);
 
-
+   app.config(['showErrorsConfigProvider', function(showErrorsConfigProvider) {
+       showErrorsConfigProvider.showSuccess(true);
+   }]);
 
 
 

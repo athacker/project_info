@@ -1,12 +1,62 @@
 
     <div class="container-fluid">
         <div class="row ">
-            <div class="col-md-1"></div>
+            <div class="col-md-1"> </div>
             <div class="col-md-8">
-                <h3> {{title}}</h3>
+                 <h3>{{title}}</h3>
+                <div class="pull-right">
+                    <span class="glyphicon glyphicon-plus sm" ng-click="addNew=true"> </span> &nbsp;
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid" ng-show="addNew">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+
+                <form id="itemform" name="itemform" class="form-group">
+
+                    <div class="input-group" show-errors>
+                        <label class="control-label">Sort  </label>
+                        <input type="text" id="sort" name="sort" class="form-control" ng-model="newItem.sort" ng-required="true"/>
+                        <p class="help-block" ng-if="itemform.sort.$error.required && itemform.sort.$touched">Sort Order is required</p>
+                    </div>
+
+
+                    <div class="input-group" show-errors>
+                        <label class="control-label">Title</label>
+                        <input type="text" id="title" name="title" class="form-control" ng-model="newItem.title" ng-required="true" />
+                        <p class="help-block" ng-if="itemform.title.$error.required && itemform.title.$touched">Title is required</p>
+                    </div>
+
+                    <div class="input-group" show-errors >
+                        <label class="control-label">Value</label>
+                        <input type="text" id="value" name="value" class="form-control" ng-model="newItem.value" ng-required="true"/>
+                        <p class="help-block" ng-if="itemform.value.$error.required && itemform.value.$touched">Value is required</p>
+                    </div>
+
+
+                    <br/>
+
+                    <div class="row">
+                    <div class="col-md-8">
+
+                    <button class="btn btn-primary " ng-click="saveNewItem()"> Save</button>
+                    <button class="btn btn-default" ng-click="reset(); addNew=false">Cancel</button>
+                    <button class="btn btn-link" ng-click="reset()">Reset</button>
+
+                    </div>
+                    </div>
+                </form>
+
+
             </div>
         </div>
     </div>
+
 
     <div class="container-fluid">
         <div class="row">
@@ -28,7 +78,7 @@
 
                                 <div class="pull-right">
                                     <span class="glyphicon glyphicon-edit" ng-click="isEdit=true"> </span> &nbsp;
-                                    <span class=" glyphicon glyphicon-remove-circle"  ng-click="delete(item)"> </span>
+                                    <span class="glyphicon glyphicon-remove-circle"  ng-click="delete(item)"> </span>
                                 </div>
                             </div>
 
