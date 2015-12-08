@@ -15,8 +15,9 @@ app.directive('grid', function(){
 
             $scope.saveNewItem=function(){
                 $scope.$broadcast('show-errors-check-validity');
-                if(itemform.$valid){
+                if($scope.itemform.$valid){
                     $scope.save($scope.newItem);
+                    $scope.addNew=false;
                 }
             };
 
@@ -27,7 +28,10 @@ app.directive('grid', function(){
             $scope.delete = function(removeItem ){
                 $scope.remove( {item: removeItem});
             }
-
+            $scope.cancel=function(){
+                $scope.newItem={};
+                $scope.addNew=false;
+            };
             $scope.reset=function(){
                 $scope.newItem={};
                 $scope.$broadcast('show-errors-reset');

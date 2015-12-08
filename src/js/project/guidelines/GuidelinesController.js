@@ -45,11 +45,17 @@
             //GuidelinesService.post({"title":"1","value":"2"},function(data){
             //    console.log("Save Guidelines Return Response:" + JSON.stringify(data ) );
             //});
-             $scope.guidelines.filter(function( item){
-                if (item.id === guideline.id){
-                    $scope.guidelines[item] = guideline;
-                }
-            });
+             if(typeof guideline.id === 'undefined'){
+                    var lastElement = $scope.guidelines.pop();
+                    guideline.id = lastElement.id+1;
+                    $scope.guidelines.push(guideline);
+             }else {
+                 $scope.guidelines.filter(function (item) {
+                     if (item.id === guideline.id) {
+                         $scope.guidelines[item] = guideline;
+                     }
+                 });
+             }
         };
 
              
