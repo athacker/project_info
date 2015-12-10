@@ -306,6 +306,16 @@ textarea {
     display: block;
 }
 
+.panel-body{ background-color: #ecf2f9; color: #204060;}
+.panel-title{
+    color: white;
+    background-color: steelblue;
+}
+.panel-default>.panel-heading{
+    background-color: steelblue;
+
+}
+
 /* Custom dialog/modal headers */
 
 .modal-dialog { background-color: navy; }
