@@ -10,46 +10,36 @@ module.exports = function(grunt) {
         jshint: {
             all: ['Gruntfile.js', 'src/js/project/**/*.js', 'test/**/*.js']
         },
-
-        comments:{
+        copy:{
+          build:{
+                cwd:'src',
+                src:['index.html', 'html/*.html', 'js/**/*.js'],
+                dest:'dist',
+                expand: true
+             }
+        },
+       stripComments:{
             build:{
                 options: {
                     singleline: true,
                     multiline: true
                 },
-                src: [   'dist/clean/**/*.js']
+                src: [   'dist/**/*.js']
             }
         },
-        removelogging:{
+        stripLogging:{
             build:{
-                src:'src/js/project/**.js',
-                dest:'dist/clean/project/app.js'
-            }
-        },
-        copy:{
-            build_dev:{
-                cwd:'src',
-                src:['**'],
-                dest:'dist',
-                expand: true
-
-            },
-            build_prod:{
-                cwd:'src',
-                src:['index.html', 'html/*.html'],
-                dest:'dist',
-                expand: true
-
+                src:'dist/**/**.js'
             }
         },
 
         uglify: {
             options: {
-                banner: '  <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %>  \n'
+
             },
             build: {
                 files: {
-                    'build/app.min.js': ['dist/clean/projects/*.js']
+                    'build/app.min.js': ['dist/**/*.js']
                 }
             }
         }
@@ -65,8 +55,7 @@ module.exports = function(grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default','minify, copy-for-dev-debug', ['jshint','uglify','copy:build_dev' ]);
-    grunt.registerTask('prod-build','', ['removelogging', 'comments', 'jshint','uglify','copy:build_prod', ]);
+    grunt.registerTask('default','', ['jshint','copy:build',  'jshint','uglify' ]);
 
 
 };
