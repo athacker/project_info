@@ -12,6 +12,11 @@ app.directive('grid', function(){
         controller: function($scope  ){
             $scope.isEdit=false;
             $scope.newItem={};
+            $scope.databackup=[];
+
+
+            //this isn't rednering fast enough!!'
+            angular.copy($scope.data, $scope.databackup);
 
             $scope.saveNewItem=function(){
                 $scope.$broadcast('show-errors-check-validity');
@@ -22,6 +27,7 @@ app.directive('grid', function(){
             };
 
             $scope.save= function(saveItem){
+              $scope.isEdit=false;
               $scope.accept({item: saveItem});
             },
 
@@ -32,9 +38,17 @@ app.directive('grid', function(){
                 $scope.newItem={};
                 $scope.addNew=false;
             };
+            $scope.cancelEdit=function( $index ){
+                $scope.data[$index].value = $scope.databackup[$index].value;
+            };
+
             $scope.reset=function(){
                 $scope.newItem={};
                 $scope.$broadcast('show-errors-reset');
+            };
+
+            $scope.resetEdit=function( $index ){
+               $scope.data[$index].value = $scope.databackup[$index].value;
             };
         }
 

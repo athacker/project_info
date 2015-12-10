@@ -63,6 +63,7 @@
 
             <div class="col-md-1"></div>
             <div class="col-md-8">
+
                 <div ng-repeat="item in data track by $index">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -85,15 +86,15 @@
                             <div class="panel-body"ng-show="isEdit">
 
                                 <div class="input-group"  >
-                                    <label class="control-label">Value</label>
-                                    <input type="text"  class="form-control" ng-model="g.value"  />
+                                    <label class="control-label"></label>
+                                    <input type="text" class="form-control" ng-model="data[$index].value" value="{{item.value}}"  />
                                 </div>
 
-
+                                <br/>
 
                                 <button class="btn btn-primary " ng-click="save(item)"> Save</button>
-                                <button class="btn btn-default" ng-click="cancel()">Cancel</button>
-                                <button class="btn btn-link" ng-click="reset()">Reset</button>
+                                <button class="btn btn-default" ng-click="cancelEdit($index); isEdit=false">Cancel</button>
+                                <button class="btn btn-link" ng-click="resetEdit($index)">Reset</button>
 
                         </div>
 
