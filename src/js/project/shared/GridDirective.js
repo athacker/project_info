@@ -29,11 +29,12 @@ app.directive('grid', function(){
             $scope.save= function(saveItem){
               $scope.isEdit=false;
               $scope.accept({item: saveItem});
-            },
+            };
 
             $scope.delete = function(removeItem ){
                 $scope.remove( {item: removeItem});
-            }
+            };
+
             $scope.cancel=function(){
                 $scope.newItem={};
                 $scope.addNew=false;

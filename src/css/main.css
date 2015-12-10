@@ -297,3 +297,21 @@ textarea {
 .form-group.has-error .help-block {
     display: block;
 }
+
+.modal-backdrop {
+    background-color: gray;
+}
+
+.modal {
+    display: block;
+}
+
+/* Custom dialog/modal headers */
+
+.modal-dialog { background-color: navy; }
+.modal-content { background-color: lightsteelblue; }
+.modal-header{ background-color: #ecf2f9; color: #204060;}
+.modal-body{ background-color: #ecf2f9; color: #204060; }
+
+
+/* Ease Display */

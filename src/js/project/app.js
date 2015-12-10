@@ -1,5 +1,6 @@
 
-   var app =  angular.module('app',['ngRoute','ngResource','ui.bootstrap','ui.bootstrap.showErrors'  ]);
+   var app =  angular.module('app',['ngRoute','ngResource','ui.bootstrap','ui.bootstrap.showErrors', 'ui.bootstrap.modal',
+       'ui.bootstrap.tpls'  ]);
 
    app.config(['$routeProvider',function($routeProvider  ){
 

@@ -3,7 +3,7 @@
  */
 (function(){
 
-    app.controller('mainController', function($scope, $location){
+    app.controller('mainController', function($scope, $location, $uibModal ){
 
         var mc = this;
         //class variables
@@ -12,6 +12,9 @@
 
         //method interface
         mc.init = init();
+
+
+
 
 
         //method implmentations
@@ -24,7 +27,6 @@
 
 
         $scope.$watch('mc.devNavigation',function(val){
-            console.log("Navigate to: " + val);
             $location.url('/' + val +'/'   );
         });
 
@@ -32,9 +34,42 @@
 
 
 
+         $scope.openModal = function() {
+           var windowSize='lg';
 
+            var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: '/html/partials/navigationModal.html',
+                controller: 'ModalInstanceCtrl',
+                size:  windowSize
+            });
+
+
+        }
 
     });
+
+    angular.module('app').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance,$location ) {
+        $scope.closeModal = function () {
+            $uibModalInstance.close();
+        };
+        $scope.cancel = function () {
+            $location.url('/operations/'   );
+            $uibModalInstance.close();
+        };
+        $scope.$watch('devNavigation',function(val){
+            $location.url('/' + val +'/'   );
+        });
+    });
+
+
+
+
+
+
+
+
+
 
 
 
