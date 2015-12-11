@@ -11,19 +11,48 @@
 
             <div class="modal-body">
 
-                    <div><label ng-model="devNavigation" uib-btn-radio="'operations'" ng-click="closeModal()">Operations</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'guidelines'" ng-click="closeModal()">Guidelines</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'architecture'" ng-click="closeModal()">Arhitecture</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'standards'" ng-click="closeModal()">Standards</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'setup'" ng-click="closeModal()"> Project Set Up</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'help'" ng-click="closeModal()">Technical Help</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'team'" ng-click="closeModal()">Team Members</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'schedule'" ng-click="closeModal()">Schedule</label></div>
-                    <div><label ng-model="devNavigation" uib-btn-radio="'codepen'" ng-click="closeModal()">Technical Research</label></div>
+                <div ng-class="{hover: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'operations'" ng-click="closeModal()">Operations</label>
+                </div>
+                <div></div>
+
+                <div ng-class="{hover: hover1}" ng-mouseenter="hover1 = true" ng-mouseleave="hover1 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'guidelines'" ng-click="closeModal()">Guidelines</label>
+                </div>
+
+                <div ng-class="{hover: hover2}" ng-mouseenter="hover2 = true" ng-mouseleave="hover2 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'architecture'" ng-click="closeModal()">Arhitecture</label>
+                </div>
+
+                <div ng-class="{hover: hover3}" ng-mouseenter="hover3 = true" ng-mouseleave="hover3 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'standards'" ng-click="closeModal()">Standards</label>
+                </div>
+
+                <div ng-class="{hover: hover4}" ng-mouseenter="hover4 = true" ng-mouseleave="hover4 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'setup'" ng-click="closeModal()"> Project Set Up</label>
+                </div>
+
+                <div ng-class="{hover: hover5}" ng-mouseenter="hover5 = true" ng-mouseleave="hover5 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'help'" ng-click="closeModal()">Technical Help</label>
+                </div>
+
+                <div ng-class="{hover: hover6}" ng-mouseenter="hover6 = true" ng-mouseleave="hover6 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'team'" ng-click="closeModal()">Team Members</label>
+                </div>
+
+                <div ng-class="{hover: hover7}" ng-mouseenter="hover7 = true" ng-mouseleave="hover7 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'schedule'" ng-click="closeModal()">Schedule</label>
+                </div>
+
+                <div ng-class="{hover: hover8}" ng-mouseenter="hover8 = true" ng-mouseleave="hover8 = false">
+                    <label ng-model="devNavigation" uib-btn-radio="'codepen'" ng-click="closeModal()">Technical Research</label>
+                </div>
 
             </div>
 
 
 
-
-            </div></div></div>
+        </div>
+    </div>
+    </div>
+</div>
