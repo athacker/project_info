@@ -49,12 +49,6 @@
                     var lastElement = $scope.guidelines.pop();
                     guideline.id = lastElement.id+1;
                     $scope.guidelines.push(guideline);
-             }else {
-                 $scope.guidelines.filter(function (item) {
-                     if (item.id === guideline.id) {
-                         $scope.guidelines[item] = guideline;
-                     }
-                 });
              }
         };
 
