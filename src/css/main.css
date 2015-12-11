@@ -308,14 +308,17 @@ textarea {
 
 .panel-body{ background-color: #ecf2f9; color: #204060;}
 .panel-title{
-    color: white;
-    background-color: steelblue;
+    color:  #204060;
+    background-color:  #8cb2d9;
 }
 .panel-default>.panel-heading{
-    background-color: steelblue;
+    background-color:  #8cb2d9;
 
 }
-
+.hover{
+    color: white;
+    background-color:  #8cb2d9;
+}
 /* Custom dialog/modal headers */
 
 .modal-dialog { background-color: navy; }

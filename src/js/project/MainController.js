@@ -19,8 +19,7 @@
 
         //method implmentations
         function init(){
-            console.log("Initialize Main Controller as mc.");
-            mc.title='Dev Ops -- Project Information';
+            mc.title='Project Information';
             mc.devNavigation='operations';
             $location.url('/operations/'   );
         }

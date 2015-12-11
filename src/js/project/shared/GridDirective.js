@@ -27,8 +27,7 @@ app.directive('grid', function(){
             };
 
             $scope.save= function(saveItem){
-              $scope.isEdit=false;
-              $scope.accept({item: saveItem});
+                 $scope.accept({item: saveItem});
             },
 
             $scope.delete = function(removeItem ){
